@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    div{
+height: 250px;
+width: 270px;
+border: solid black;
+text-align: center;
+align-content: center;
+    }
+
+    button{
+        background-color: bisque;
+       margin-top: 10px;
+       margin-left: 20px;
+       color: aliceblue;
+       border-radius: 10pc;
+       padding: 10px;
+    }
+</style>
+
+<body>
+    <h1>Color Generatour</h1>
+    <div> Color Generator</div>
+
+    <button onclick="changeColor()">Change color</button>
+
+    <script>
+         function generatecolor(){
+
+            let r = Math.floor(Math.random()*255);
+            let g = Math.floor(Math.random()*255);
+            let b = Math.floor(Math.random()*255);
+
+            return `rgb( ${r},${g}, ${b})`;
+
+         }
+
+         function changeColor(){
+
+         let newColor = generatecolor();
+         const container = document.querySelector("div");
+         container.style.background = newColor;
+         container.innerText = newColor;
+
+         }
+
+    </script>
+</body>
+</html>
